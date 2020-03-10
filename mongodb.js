@@ -24,11 +24,7 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
     //     console.log(users)
     // })
 
-    db.collection('tasks').findOne({ _id: new ObjectID("5e6697a1645ea53fc46761a4")}, (error, task) => {
-        if (error) {
-            return console.log(error)
-        }
-
+    db.collection('tasks').findOne({ _id: new ObjectID("5e66f61d79a54518281c64f0") }, (error, task) => {
         console.log(task)
     })
 
