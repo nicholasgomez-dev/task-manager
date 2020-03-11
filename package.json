@@ -19,7 +19,7 @@
   "homepage": "https://github.com/nicholasgomez-dev/task-manager#readme",
   "dependencies": {
     "mongodb": "^3.5.4",
-    "mongoose": "^5.3.16",
+    "mongoose": "^5.9.4",
     "validator": "^10.9.0"
   }
 }
