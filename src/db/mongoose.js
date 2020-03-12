@@ -77,7 +77,7 @@ const Task = mongoose.model('Task', {
 })
 
 const task = new Task({
-    description: ' eat lunch lol'
+    description: 'eat lunch lol'
 })
 
 task.save().then(() => {
