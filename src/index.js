@@ -1,6 +1,6 @@
 // Improting: Express, mongoose.js, User model
 const express = require('express')
-require('./db/mongoose')
+require('./db/mongoose') //this require will just ensure that the file runs
 const User = require('./models/user')
 
 // Setting: express, port
@@ -17,7 +17,7 @@ app.post('/users', (req, res) => {
     user.save().then(() => {
         res.send(user)
     }).catch((e) => {
-        res.send(e)
+        res.status(400).send(e)
     })
 })
 

@@ -1,0 +1,3 @@
+mongodb launch
+work: 'C:/Users/Nick Gomez/mongodb/bin/mongod.exe' --dbpath='C:/Users/Nick Gomez/mongodb-data'
+home: C:/Users/gomez/mongodb/bin/mongod.exe --dbpath=C:/Users/gomez/mongodb-data
