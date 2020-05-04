@@ -1,8 +1,6 @@
 // Improting: Express, mongoose.js, User model
 const express = require('express')
 require('./db/mongoose') //this require will just ensure that the file runs
-const User = require('./models/user')
-const Task = require('./models/task')
 const userRouter = require('./routers/user')
 const taskRouter = require('./routers/task')
 
