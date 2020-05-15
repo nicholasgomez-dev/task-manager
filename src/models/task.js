@@ -21,5 +21,3 @@ const Task = mongoose.model('Task', {
 })
 
 module.exports = Task
-
-//11mins lesson 114

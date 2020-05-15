@@ -3,7 +3,7 @@ const router = new express.Router()
 const auth = require('../middleware/auth')
 const Task = require('../models/task')
 
-// Task Endpoints
+//Create task
 router.post('/tasks', auth, async (req, res) => {
     const task = new Task ({
         ...req.body,
@@ -17,6 +17,7 @@ router.post('/tasks', auth, async (req, res) => {
     }
 })
 
+//Find all tasks
 router.get('/tasks', async (req, res) => {
     try {
         const tasks = await Task.find({})
@@ -26,11 +27,13 @@ router.get('/tasks', async (req, res) => {
     }
 })
 
-router.get('/tasks/:id', async (req, res) => {
+//Find task
+router.get('/tasks/:id', auth, async (req, res) => {
     const _id = req.params.id
 
     try {
-        const task = await Task.findById(_id)
+        const task =  await Task.findOne({ _id, owner: req.user._id })
+
         if (!task) {
             return res.status(404).send()
         }
@@ -39,7 +42,10 @@ router.get('/tasks/:id', async (req, res) => {
         res.status(500).send()
     }
 })
+// left off on 2:50 lesson 115
 
+
+//Update task
 router.patch('/tasks/:id', async (req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['description', 'completed']
@@ -64,6 +70,7 @@ router.patch('/tasks/:id', async (req, res) => {
     }
 })
 
+//Delete task
 router.delete('/tasks/:id', async (req, res) => {
     try {
         const task = await Task.findByIdAndDelete(req.params.id)
