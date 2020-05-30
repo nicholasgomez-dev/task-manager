@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/nicholasgomez-dev/task-manager#readme",
   "dependencies": {
+    "@sendgrid/mail": "^7.1.1",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
